@@ -217,6 +217,7 @@ body {
     margin-bottom: 1.5rem;
     color: #666;
     line-height: 1.8;
+    text-align: justify;
 }
 
 .about-features {
@@ -327,6 +328,7 @@ body {
     color: #666;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
 .product-features {
@@ -363,6 +365,7 @@ body {
     color: #666;
     font-size: 1.1rem;
     margin-bottom: 2rem;
+    text-align: justify;
 }
 
 .condiments-grid {
@@ -413,8 +416,16 @@ body {
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 2rem;
     align-items: start;
+}
+
+/* Contact columns spacing */
+.contact-left,
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
 .contact-info {
@@ -439,6 +450,7 @@ body {
 .contact-item p {
     color: #666;
     line-height: 1.6;
+    text-align: justify;
 }
 
 .contact-item a {
@@ -457,6 +469,7 @@ body {
 	gap: 1rem;
 	flex-wrap: wrap;
 	align-items: center;
+    margin-top: 0.25rem;
 }
 
 .social-link {
