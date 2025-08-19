@@ -1,192 +1,625 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corndoglicious - Delicious Corndogs</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="hotdog.png" alt="Corndoglicious Logo" class="logo-img">
-                <h2>Corndoglicious</h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#products" class="nav-link">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Home Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to Corndoglicious</h1>
-            <p>Affordable, tasty corndogs perfect for quick snacks and casual hangouts</p>
-            <a href="#products" class="cta-button">View Our Corndogs</a>
-        </div>
-    </section>
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-header">
-                <div class="about-logo">
-                    <img src="hotdog.png" alt="Corndoglicious Logo" class="about-logo-img">
-                </div>
-                <h2>About Us</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Corndoglicious is a small business that offers corndogs made from hotdogs cut into four pieces, coated in corn batter, and served with ketchup, mayonnaise, or other flavor options.</p>
-                    <p>Our goal is to provide an affordable and convenient snack that is suitable for quick meals, casual gatherings, or on-the-go eating.</p>
-                    <p>Our corndogs are supplied by a family-operated business located at 20 J. Ferrer Street, Guerrero Compound, San Isidro, Parañaque City, Metro Manila, ensuring consistency in preparation and supply.</p>
-                </div>
-                <div class="about-features">
-                    <div class="feature">
-                        <h3>Affordable Prices</h3>
-                        <p>Budget-friendly options for everyone</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Fresh Ingredients</h3>
-                        <p>Always fresh, clean, and prepared with care</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Quick Service</h3>
-                        <p>Ready to eat with minimal wait time</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <h2>Our Delicious Corndogs</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="ham-cheese.jpg" alt="Ham and Cheese Corndog" onerror="console.log('Failed to load: ham-cheese.jpg')" onload="console.log('Successfully loaded: ham-cheese.jpg')">
-                    </div>
-                    <div class="product-info">
-                        <h3>Ham and Cheese Corndog</h3>
-                        <p>A tasty corndog made with ham and cheese, coated in our crispy corn batter. Customize with your favorite condiments like hot cheese, hot sauce, powder, cheese, ketchup, mayonnaise, and more!</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Ham & Cheese</span>
-                            <span class="feature-tag">Crispy Batter</span>
-                            <span class="feature-tag">Customizable</span>
-                        </div>
-                    </div>
-                </div>
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="regular.jpg" alt="Classic Regular Corndog" onerror="console.log('Failed to load: regular.jpg')" onload="console.log('Successfully loaded: regular.jpg')">
-                    </div>
-                    <div class="product-info">
-                        <h3>Classic Regular Corndog</h3>
-                        <p>Our regular corndog made with hotdog sliced into four pieces, coated in crispy corn batter. Customize with your favorite condiments like hot cheese, hot sauce, powder, cheese, ketchup, mayonnaise, and more!</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Classic</span>
-                            <span class="feature-tag">Crispy Batter</span>
-                            <span class="feature-tag">Customizable</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Condiments Section -->
-            <div class="condiments-section">
-                <h3>Customize Your Corndog</h3>
-                <p>Make it your own with our variety of condiments and toppings!</p>
-                <div class="condiments-grid">
-                    <div class="condiment-item">
-                        <span class="condiment-icon">🔥🧀</span>
-                        <h4>Hot Cheese</h4>
-                    </div>
-                    <div class="condiment-item">
-                        <span class="condiment-icon">🌶️</span>
-                        <h4>Hot Sauce</h4>
-                    </div>
-                    <div class="condiment-item">
-                        <span class="condiment-icon">🧀</span>
-                        <h4>Cheese</h4>
-                    </div>
-                    <div class="condiment-item">
-                        <span class="condiment-icon">🍅</span>
-                        <h4>Ketchup</h4>
-                    </div>
-                    <div class="condiment-item">
-                        <span class="condiment-icon">🥫</span>
-                        <h4>Mayonnaise</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>Get in Touch</h3>
-                        <p>Have questions or want to place an order? We'd love to hear from you!</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <p><a href="mailto:corndoglicious.ph@gmail.com">corndoglicious.ph@gmail.com</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Phone</h3>
-                        <p><a href="tel:+639943319169">0994 331 9169</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Service</h3>
-                        <p>Dine-in and Take-out available</p>
-                    </div>
-                </div>
-                <div class="contact-target">
-                    <h3>Perfect For</h3>
-                    <ul>
-                        <li>Students and young adults looking for affordable snacks</li>
-                        <li>Busy individuals who want ready-to-eat food</li>
-                        <li>Groups of friends or families enjoying casual treats</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Corndoglicious. All rights reserved.</p>
-        </div>
-    </footer>
+.logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.nav-logo h2 {
+    color: #e67e22;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #e67e22;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #e67e22;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assetshero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: white;
+    color: #e67e22;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.about-logo {
+    text-align: center;
+}
+
+.about-logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feature {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature h3 {
+    color: #e67e22;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.feature p {
+    color: #666;
+}
+
+/* Products Section */
+.products {
+    padding: 100px 0;
+    background: white;
+}
+
+.products h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-image img:not([src]), 
+.product-image img[src=""],
+.product-image img[src*="undefined"] {
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+}
+
+.product-image img:not([src])::after,
+.product-image img[src=""]::after,
+.product-image img[src*="undefined"]::after {
+    content: "Image not found";
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 2rem;
+}
+
+.product-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.product-info p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.product-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.feature-tag {
+    background: #e67e22;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Condiments Section */
+.condiments-section {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 3rem;
+    background: #f8f9fa;
+    border-radius: 20px;
+}
+
+.condiments-section h3 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.condiments-section p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.condiments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.condiment-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.condiment-item:hover {
+    transform: translateY(-5px);
+}
+
+.condiment-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.condiment-item h4 {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item h3 {
+    color: #e67e22;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.contact-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.contact-item a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Social links */
+.social-links {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.social-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	color: #e67e22;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.social-link:hover {
+	text-decoration: underline;
+}
+
+.social-icon {
+	font-size: 1.1rem;
+}
+
+.contact-target {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-target h3 {
+    color: #e67e22;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.contact-target ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-target li {
+    color: #666;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.contact-target li:before {
+    content: "✓";
+    color: #e67e22;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.contact-target li:last-child {
+    border-bottom: none;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+
+
+    .condiments-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+    }
+
+    .about-header {
+        gap: 1rem;
+    }
+    
+    .about-logo-img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .about h2 {
+        font-size: 2rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .about h2,
+    .products h2 {
+        font-size: 2rem;
+    }
+}
