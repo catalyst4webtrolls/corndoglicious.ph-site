@@ -451,6 +451,31 @@ body {
     text-decoration: underline;
 }
 
+/* Social links */
+.social-links {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.social-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	color: #e67e22;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.social-link:hover {
+	text-decoration: underline;
+}
+
+.social-icon {
+	font-size: 1.1rem;
+}
+
 .contact-target {
     background: white;
     padding: 2rem;
